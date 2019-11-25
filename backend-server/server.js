@@ -23,7 +23,6 @@ app.post('/raw', function (req, res) {
   catch(err){ data = req.body;}
   console.log(data);
   res.json(data);
-  console.dir(req.body);
   doc.useServiceAccountAuth(creds, (err) => record(err, data, 0));
 });
 
@@ -45,7 +44,3 @@ app.get("/", function(req, res) {
   //when we get an http get request to the root/homepage
   res.send("Test");
 });
-
-app.all('/raw', function (req, res, next) {
-  console.log('Accessing the secret section ...');
-})

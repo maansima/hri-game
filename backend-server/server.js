@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 async function record(err, data, sheet_id) {
     doc.getInfo(function (err, info) {
       sheet = info.worksheets[sheet_id];
-      sheet.addRow(data, () => console.log("Recorded!"));
+      sheet.addRow(data, () => console.log("Recorded! to doc " + doc));
 })};
 
 app.post('/raw', function (req, res) {
@@ -33,6 +33,7 @@ app.post('/complete', function (req, res) {
   try { data = JSON.parse(Object.keys(req.body)); }
   catch(err){ data = req.body;}
   console.log(data);
+  console.log("i am here");
   res.json(data);
   doc.useServiceAccountAuth(creds, (err) => record(err, data, 1));
 });

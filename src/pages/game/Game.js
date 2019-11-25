@@ -53,7 +53,6 @@ class Game extends React.Component {
     var today = new Date();
     fetch(baseURL + route, {
       method: 'POST',
-      mode: "no-cors",
       headers: {
         'Accept': 'application/x-www-form-urlencoded',
         'Content-Type': 'application/x-www-form-urlencoded',

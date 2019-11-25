@@ -13,7 +13,7 @@ import End from './End.js';
 import History from './History.js';
 
 const cookies = new Cookies();
-const baseURL = "https://hri-game-backend.herokuapp.com"
+const baseURL = "https://hri-game-backend2.herokuapp.com"
 const styles = theme => ({
   card: {
     minWidth: 275,
@@ -53,6 +53,7 @@ class Game extends React.Component {
     var today = new Date();
     fetch(baseURL + route, {
       method: 'POST',
+      mode: "no-cors",
       headers: {
         'Accept': 'application/x-www-form-urlencoded',
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -89,7 +90,7 @@ class Game extends React.Component {
         Loaded: this.state.loaded,
       }),
     })
-    console.log("Data pushed");
+    console.log("Data pushed to " + baseURL + route);
     if (route === "/complete") {
       this.setState({complete: true, showHistory: false})
     }

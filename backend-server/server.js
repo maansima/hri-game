@@ -3,7 +3,7 @@ var GoogleSpreadsheet = require('google-spreadsheet');
 var async = require('async');
 var app = require('express')();
 var bodyParser = require('body-parser');
-var doc = new GoogleSpreadsheet('1aVNGZKTV20RuaPTpeTE8UQ0p_gevxrxDKdD0-2HUS5U');
+var doc = new GoogleSpreadsheet('1qDEeSQ4g-7qHMLHqT57SNFoH_mkJD52BxYv_Oud9uz0');
 var creds = require('./credentials.json');
 
 app.use(bodyParser.json());
@@ -23,6 +23,7 @@ app.post('/raw', function (req, res) {
   catch(err){ data = req.body;}
   console.log(data);
   res.json(data);
+  console.dir(req.body);
   doc.useServiceAccountAuth(creds, (err) => record(err, data, 0));
 });
 
@@ -39,3 +40,12 @@ app.post('/complete', function (req, res) {
 
 // Expects data in form of application/x-www-form-urlencoded
 app.listen(port, function() {});
+
+app.get("/", function(req, res) {
+  //when we get an http get request to the root/homepage
+  res.send("Test");
+});
+
+app.all('/raw', function (req, res, next) {
+  console.log('Accessing the secret section ...');
+})

@@ -56,12 +56,12 @@ class RobotVideo extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <div className="RobotVideo">
         <h1> Denise's choice</h1>
         <Divider />
         <br />
+        {  console.log('these are stages and actions ' + this.props.stage + ' ' + this.props.action) }
         {!this.state.playing && !this.state.videoDone ?
           <div>
             Denise has chosen to attempt {rooms[this.props.action]} worth {rewards[this.props.stage][this.props.action]} points.

@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 async function record(err, data, sheet_id) {
     doc.getInfo(function (err, info) {
       sheet = info.worksheets[sheet_id];
-      sheet.addRow(data, () => console.log("Recorded! to doc " + doc));
+      sheet.addRow(data, () => console.log("Recorded! to doc " + info.title + " where sheet url is " + info.url));
 })};
 
 app.post('/raw', function (req, res) {

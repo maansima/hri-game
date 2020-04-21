@@ -30,7 +30,9 @@ class Intro extends React.Component {
       name: '',
       screen: 0,
     }
-    this.checkCookies();
+    //COMMENTING THIS OUT MEANS THAT THE WEBSITE ISN'T USING COOKIES ANYMORE, SO YOU HAVE TO START OVER 
+    //PROGRESS IS NOT RECORDED  
+   // this.checkCookies();
   }
 
   checkCookies = () => {

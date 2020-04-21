@@ -127,6 +127,7 @@ class Game extends React.Component {
   }
 
   // Intro screen --> Human room options
+  //change this to an incremental number 
   beginGame = () => {
     const id = Math.floor(Math.random() * 2 ** 16);
     this.setState({ id: id }, this.setCookies);

@@ -12,7 +12,7 @@ Created by Matthew Tang. Questions? Email me at matthewtang@berkeley.edu.
 ## Frontend
 
 ### Features
-* Local storage (cookies) to store progress if site is closed
+* Local storage (s) to store progress if site is closed
 * Random robot strategies for multiple treatments (Starting from versions 1.4+, even IDs=optimal, odd IDs=random)
 * Continue buttons only show up once videos finish playing to force users to watch all of video (on first time playing)
 * History of past room choices
